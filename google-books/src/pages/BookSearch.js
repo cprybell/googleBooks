@@ -56,6 +56,8 @@ class Books extends Component {
   }
 
   render() {
+    let buttonName = "Save Book!";
+    let styleButton = "btn btn-success";
     return (
       <Container fluid>
         <Row>
@@ -66,7 +68,7 @@ class Books extends Component {
             </Jumbotron>
             <form>
               <Input name="title" placeholder="Book Title (ex. The Shining)" value={this.state.title} onChange={this.handleInputChange}/>
-              <FormBtn onClick={this.handleFormSubmit}>Search Book</FormBtn>
+              <FormBtn onClick={this.handleFormSubmit} buttonStyle={styleButton}>Search Book</FormBtn>
             </form>
           </Col>
           <Col size="md-12">
@@ -82,6 +84,8 @@ class Books extends Component {
                     synopsis={book.volumeInfo.description}
                     link={book.volumeInfo.canonicalVolumeLink}
                     onClickFunc={() => this.handleSave(book)}
+                    buttonTitle={buttonName}
+                    buttonStyle={styleButton}
                   >
                   </BookCard>
                 )

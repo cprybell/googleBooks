@@ -12,7 +12,7 @@ function BookCard(props) {
     <p className="card-text">Synopsis: {props.synopsis}</p>
     <a href={props.link} className="card-link">Book Link</a>
   </div>
-  <FormBtn onClick={props.onClickFunc}>Save Book!</FormBtn>
+  <FormBtn onClick={props.onClickFunc} buttonStyle={props.buttonStyle}>{props.buttonTitle}</FormBtn>
 </div>
   );
 }
